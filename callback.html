@@ -1,7 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram OAuth Redirect</title>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <script>
+        // Verifica se há um código de autorização na URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+
+        // Exiba o código na página (apenas para fins de demonstração)
+        if (code) {
+            document.body.innerHTML = `<h1>Código de Autorização: ${code}</h1>`;
+        } else {
+            document.body.innerHTML = '<h1>Ocorreu um erro durante o processo de autorização.</h1>';
+        }
+    </script>
 </body>
 </html>
